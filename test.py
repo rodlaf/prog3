@@ -8,6 +8,7 @@ NUMDIGITS = 12
 A = []
 
 def newNumbers():
+    A = []
     for _ in range(NUMINTS):
         A.append(randint(1, 10 ** NUMDIGITS))
 
