@@ -5,20 +5,19 @@ NUMTRIALS = 100
 NUMINTS = 100
 NUMDIGITS = 12
 
-A = []
-
 def newNumbers():
     A = []
     for _ in range(NUMINTS):
         A.append(randint(1, 10 ** NUMDIGITS))
+    return A
 
 def printResult(result):
     print('Trial: '+str(result[0])+'   Algorithm: '+str(result[1])+'   Residue: '+str(result[2])+'   Time: '+str(result[3]))
 
 results = []
 for trial in range(1, NUMTRIALS + 1):
-    newNumbers()
-    
+    A = newNumbers()
+
     start = time()
     residue = KK(A)
     end = time()
@@ -73,6 +72,8 @@ f=open('result.txt','w')
 for elt in results:
     f.write(str(elt)+'\n')
 f.close()
+
+    
 
     
 
